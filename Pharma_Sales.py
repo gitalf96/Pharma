@@ -67,7 +67,7 @@ connection_parameters = {
     'user': 'Ralf1114',
     'password':'Winter_1996',
     'account':'vabkqah-bz11525',
-    'passcode':'171836'
+    'passcode':'171836',
     'warehouse':'COMPUTE_WH',
     'database':'TESTING',
     'schema':'DATASETS'
