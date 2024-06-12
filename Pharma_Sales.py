@@ -67,6 +67,7 @@ connection_parameters = {
     'user': 'Ralf1114',
     'password':'Winter_1996',
     'account':'vabkqah-bz11525',
+    'passcode':'171836'
     'warehouse':'COMPUTE_WH',
     'database':'TESTING',
     'schema':'DATASETS'
@@ -77,6 +78,7 @@ conn = snowflake.connector.connect(
     user=connection_parameters['user'],
     password=connection_parameters['password'],
     account=connection_parameters['account'],
+    passcode=connection_parameters['passcode'],
     warehouse=connection_parameters['warehouse'],
     database=connection_parameters['database'],
     schema=connection_parameters['schema']
