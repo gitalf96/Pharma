@@ -160,7 +160,7 @@ if selected=="Analysis":
                     plt.ylabel('Sales')
                     plt.title('Time Series of Pharma Sales')
                     plt.legend()
-                    st.pyplot(plt.gcf())
+                    st.pyplot(plt)
                 else:
                     st.write("Please select at least one drug category to display the line plot.")
 
