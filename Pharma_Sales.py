@@ -193,7 +193,7 @@ if selected=="Analysis":
             df,
             x='ACETICACIDDERIVATIVES',
             title='Frequency Distribution of Acetic Acid Derivatives Sales',
-            labels={'AceticAcidDerivatives': 'Acetic Acid Derivatives Sales'},
+            labels={'ACETICACIDDERIVATIVES': 'Acetic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
             
@@ -201,15 +201,15 @@ if selected=="Analysis":
             df,
             x='SALICYLICACIDDERIVATIVES',
             title='Frequency Distribution of Salicylic Acid Derivatives',
-            labels={'SalicylicAcidDerivatives': 'Salicylic Acid Derivatives'},
+            labels={'SALICYLICACIDDERIVATIVES': 'Salicylic Acid Derivatives'},
             nbins=10  # Number of bins
              )
             
             ag=px.histogram(
             df,
-            x='PropionicAcidDerivatives',
+            x='PROPIONICACIDDERIVATIVES',
             title='Frequency Distribution of Propionic Acid Derivatives Sales',
-            labels={'PropionicAcidDerivatives': 'Propionic Acid Derivatives Sales'},
+            labels={'PROPIONICACIDDERIVATIVES': 'Propionic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
             
@@ -217,7 +217,7 @@ if selected=="Analysis":
             df,
             x='PYRAZOLONESANDANILIDES',
             title='Frequency Distribution of Pyrazolones And Anilides Sales',
-            labels={'PyrazolonesAndAnilides': 'Pyrazolones And Anilides Sales'},
+            labels={'PYRAZOLONESANDANILIDES': 'Pyrazolones And Anilides Sales'},
             nbins=10  # Number of bins
              )
             
@@ -225,7 +225,7 @@ if selected=="Analysis":
             df,
             x='ANXIOLYTICDRUGS',
             title='Frequency Distribution of Anxiolytic Drugs Sales',
-            labels={'AnxiolyticDrugs': 'Anxiolytic Drugs Sales'},
+            labels={'ANXIOLYTICDRUGS': 'Anxiolytic Drugs Sales'},
             nbins=10  # Number of bins
              )
             
@@ -233,7 +233,7 @@ if selected=="Analysis":
             df,
             x='HYPNOTICSSNDSEDATIVESDRUGS',
             title='Frequency Distribution of Hypnotics and Sedatives Drugs Sales',
-            labels={'HypnoticsSndSedativesDrugs': 'Hypnotics and Sedatives Drugs Sales'},
+            labels={'HYPNOTICSSNDSEDATIVESDRUGS': 'Hypnotics and Sedatives Drugs Sales'},
             nbins=10  # Number of bins
              )
             
@@ -249,7 +249,7 @@ if selected=="Analysis":
             df,
             x='ANTIHISTAMINES',
             title='Frequency Distribution of Antihistamines Sales',
-            labels={'Antihistamines': 'Antihistamines'},
+            labels={'ANTIHISTAMINES': 'Antihistamines'},
             nbins=10  # Number of bins
              )
             
