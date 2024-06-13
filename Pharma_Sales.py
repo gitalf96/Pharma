@@ -137,32 +137,40 @@ if selected=="Analysis":
 
         with d2:
 
-                year_filter = st.selectbox("Select Year", pd.unique(df['YEAR']))
-                month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
+                r1,r2,r3,r4=st.columns([10,10,2,42.5])
 
-                df = df[df['YEAR'] == year_filter]
-                df = df[df['MONTH'] == month_filter]
+                with r1:
 
-                selected_drugs = st.multiselect(
-                'Select drug categories to plot',
-                options=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES', 'SALICYLICACIDDERIVATIVES',
-                'PYRAZOLONESANDANILIDES', 'ANXIOLYTICDRUGS', 'HYPNOTICSSNDSEDATIVESDRUGS',
-                'OBSTRUCTIVEAIRWAYDRUGS', 'ANTIHISTAMINES'],
-                default=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES']
-                )
+                    year_filter = st.selectbox("Select Year", pd.unique(df['YEAR']))
+                    df = df[df['YEAR'] == year_filter]
+                    
+                with r2:
+                    
+                    month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
+                    df = df[df['MONTH'] == month_filter]
+                                        
+                    
+                with r4:
+                    selected_drugs = st.multiselect(
+                    'Select drug categories to plot',
+                    options=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES', 'SALICYLICACIDDERIVATIVES',
+                    'PYRAZOLONESANDANILIDES', 'ANXIOLYTICDRUGS', 'HYPNOTICSSNDSEDATIVESDRUGS',
+                    'OBSTRUCTIVEAIRWAYDRUGS', 'ANTIHISTAMINES'],
+                    default=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES']
+                    )
 
-                # Plotting
-                if selected_drugs:
-                    plt.figure(figsize=(14, 7))
-                    for drug in selected_drugs:
-                        plt.plot(df['DATE'], df[drug], label=drug)
-                    plt.xlabel('Year')
-                    plt.ylabel('Sales')
-                    plt.title('Time Series of Pharma Sales')
-                    plt.legend()
-                    st.pyplot(plt)
-                else:
-                    st.write("Please select at least one drug category to display the line plot.")
+        # Plotting
+        if selected_drugs:
+            plt.figure(figsize=(14, 7))
+            for drug in selected_drugs:
+                plt.plot(df['DATE'], df[drug], label=drug)
+            plt.xlabel('Year')
+            plt.ylabel('Sales')
+            plt.title('Time Series of Pharma Sales')
+            plt.legend()
+            st.pyplot(plt)
+        else:
+            st.write("Please select at least one drug category to display the line plot.")
 
         with d3:
              
