@@ -8,3 +8,4 @@ plotly==5.18.0
 plotly-express==0.4.1
 streamlit==1.29.0
 streamlit-option-menu==0.3.6
+plotly-express==0.4.1
