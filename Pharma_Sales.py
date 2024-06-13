@@ -138,7 +138,7 @@ if selected=="Analysis":
 
         with d2:
 
-                r1,r2,r4=st.columns([10,10,42.5])
+                r1,r2,r4=st.columns([15,15,42.5])
 
                 with r1:
 
