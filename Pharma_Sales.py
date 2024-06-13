@@ -140,8 +140,8 @@ if selected=="Analysis":
                 year_filter = st.selectbox("Select Year", pd.unique(df['YEAR']))
                 month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
 
-                df = df[df["YEAR"] == year_filter]
-                df = df[df["MONTH"] == month_filter]
+                df = df[df['YEAR'] == year_filter]
+                df = df[df['MONTH'] == month_filter]
 
                 selected_drugs = st.multiselect(
                 'Select drug categories to plot',
