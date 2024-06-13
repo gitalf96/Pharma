@@ -160,18 +160,18 @@ if selected=="Analysis":
                     default=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES']
                     )
 
-          # Plotting
-          if selected_drugs:
-              plt.figure(figsize=(14, 7))
-              for drug in selected_drugs:
-                  plt.plot(df['DATE'], df[drug], label=drug)
-              plt.xlabel('Year')
-              plt.ylabel('Sales')
-              plt.title('Time Series of Pharma Sales')
-              plt.legend()
-              st.pyplot(plt)
-          else:
-              st.write("Please select at least one drug category to display the line plot.")
+                # Plotting
+                if selected_drugs:
+                    plt.figure(figsize=(14, 7))
+                    for drug in selected_drugs:
+                        plt.plot(df['DATE'], df[drug], label=drug)
+                    plt.xlabel('Year')
+                    plt.ylabel('Sales')
+                    plt.title('Time Series of Pharma Sales')
+                    plt.legend()
+                    st.pyplot(plt)
+                else:
+                    st.write("Please select at least one drug category to display the line plot.")
 
         with d3:
              
