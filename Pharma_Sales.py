@@ -5,6 +5,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
+import plotly.express as px 
 from streamlit_option_menu import option_menu 
 # import streamlit_dynamic_filters # type: ignore
 # from streamlit_dynamic_filters import dynamic_filters # type: ignore
@@ -91,17 +92,91 @@ df = pd.read_sql(query, conn)
 # Close the connection
 conn.close()
 
-#check dataset
-df.head()
+df['TIME']=pd.to_datetime(df['TIME'])
 df.info()
-df.isnull().sum()
-df.duplicated().sum()
 
-#Change datatypes
-df['TIME']=pd.to_datetime(df["TIME"])
+with st.sidebar:
+    selected=option_menu(
+        menu_title="Menu",
+        options=["Analysis","ML Model"],
+        icons=["bar-chart","table"],
+        menu_icon="house",
+        default_index=0,
+    )
 
-#EDA
-st.write('EXPLOARATORY DATA ANALYSIS')
+if selected=="Analysis":
+
+    placeholder = st.empty()
+
+    with placeholder.container():
+
+        
+            
+            
+
+        d1,d2,d3=st.tabs(["Pharma Sales Analysis","Line plot - Sales Trend","Total Sales"])
+
+        with d1:
+             
+            summry="""
+            Pharma sales analysis involves examining data related to the sales of pharmaceutical products. This analysis is crucial for pharmaceutical companies to understand market trends, evaluate the performance of their products, and make informed business decisions. Here's a brief overview of pharma sales analysis and its advantages:
+            1. :red[Identifying Market Trends:] Analysis helps in understanding market trends, such as which drugs are in high demand, seasonal variations in sales, and emerging market preferences.
+            2. :red[Optimizing Inventory:] By analyzing sales data, companies can optimize their inventory management by stocking the right amount of each drug, reducing stockouts, and minimizing excess inventory.
+            3. :red[Sales Forecasting:] Analysis allows for accurate sales forecasting, helping companies plan production, marketing campaigns, and budget allocation effectively.
+            4. :red[Performance Evaluation:] Sales analysis provides insights into the performance of sales teams, territories, and individual products, facilitating performance evaluation and improvement strategies.
+            5. :red[Decision Making:] Data-driven insights from sales analysis support informed decision-making across various aspects of the business, leading to improved overall performance and profitability.
+            
+            """
+            def stream_data():
+                for word in summry.split(" "):
+                 yield word + " "
+                 time.sleep(0.05)
+            
+            st.write_stream(stream_data)
+
+        with d2:
+
+                year_filter = st.selectbox("Select Year", pd.unique(df['YEAR']))
+                month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
+
+                df = df[df["YEAR"] == year_filter]
+                df = df[df["MONTH"] == month_filter]
+
+                selected_drugs = st.multiselect(
+                'Select drug categories to plot',
+                options=['AceticAcidDerivatives', 'PropionicAcidDerivatives', 'SalicylicAcidDerivatives',
+                        'PyrazolonesAndAnilides', 'AnxiolyticDrugs', 'HypnoticsSndSedativesDrugs',
+                        'ObstructiveAirwayDrugs', 'Antihistamines'],
+                default=['AceticAcidDerivatives', 'PropionicAcidDerivatives']
+                )
+
+                # Plotting
+                if selected_drugs:
+                    plt.figure(figsize=(14, 7))
+                    for drug in selected_drugs:
+                        plt.plot(df['DATE'], df[drug], label=drug)
+                    plt.xlabel('Year')
+                    plt.ylabel('Sales')
+                    plt.title('Time Series of Pharma Sales')
+                    plt.legend()
+                    st.pyplot(plt.gcf())
+                else:
+                    st.write("Please select at least one drug category to display the line plot.")
+
+        with d3:
+             
+            drug_categories = [
+                'AceticAcidDerivatives', 'PropionicAcidDerivatives', 'SalicylicAcidDerivatives',
+                'PyrazolonesAndAnilides', 'AnxiolyticDrugs', 'HypnoticsSndSedativesDrugs',
+                'ObstructiveAirwayDrugs', 'Antihistamines'
+                ]
+             
+            total_sales = df[drug_categories].sum()
+
+            fig = px.pie(values=total_sales, names=drug_categories, title='Proportion of Total Sales by Drug Category')
+            fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            st.plotly_chart(fig)
+
 
 
 
