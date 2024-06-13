@@ -5,6 +5,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
+import time
 import plotly.express as px 
 from streamlit_option_menu import option_menu 
 # import streamlit_dynamic_filters # type: ignore
