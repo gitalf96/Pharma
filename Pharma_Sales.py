@@ -17,39 +17,41 @@ from streamlit_option_menu import option_menu
 st.set_page_config(page_title="Pharma Sales - Analysis and Prediction",layout='wide')
 st.title("Pharma Sales Analysis")
 
-st.markdown(
-    """
-    <style>
-    div[data-testid="stApp"]  {
-        background-color: rgba(0,0,0, 0.9);
-            }
-   </style>
-    """,
-    unsafe_allow_html=True
-)
+page_element="""
+<style>
+div[data-testid="stApp"]{
+  # background-image: url("https://cdn.wallpapersafari.com/88/75/cLUQqJ.jpg");
+  background-image: url("https://c1.wallpaperflare.com/preview/839/207/808/pill-tablet-pharmacy-medicine.jpg");
+  background-size: cover;
+}
+[data-testid="stHeader"]{
+  background-color: rgba(0,0,0,0.9);
+}
+</style>
+"""
+st.markdown(page_element, unsafe_allow_html=True)
 
-st.markdown(
-    """
-    <style>
-    section[data-testid="stSidebar"] 
-    div[class="st-emotion-cache-u5opgr eczjsme11"]{
-    background-image: linear-gradient(#8993ab,#8993ab); 
+page_element="""
+<style>
+    div[data-testid="stSidebar"]{
+    # div[class="st-emotion-cache-u5opgr eczjsme11"]{
+    background-image: url("https://cdn.wallpapersafari.com/88/75/cLUQqJ.jpg"); 
     color: white
     }
     </style>
     
-    """,
-    unsafe_allow_html=True
-)
+    """
+st.markdown(page_element, unsafe_allow_html=True)
+
 
 st.markdown("""
 <style>
 div[data-testid="column"] {
-   background-color: rgba(0,0,0, 0.0);
-   border: 3px solid rgba(0,0,0, 0.0);
-#    border: 3px solid rgba(64,224,208,0.9);
+   # background-color: rgba(204, 204, 255, 0.9);
+   background-color: rgba(255,255,255,0.5);
+   # border: 1px solid rgba(255,255,255,0.5);
    padding: 3% 2% 3% 3%;
-   border-radius:4px;
+   border-radius:1px;
    color: rgb((255,0,0));
    overflow-wrap: break-word;
 }
@@ -63,7 +65,6 @@ div[data-testid="element-container"] > label[data-testid="stMetricLabel"] > div 
 </style>
 """
 , unsafe_allow_html=True)
-
 # Define connection parameters securely
 connection_parameters = {
     'user': 'sudharchanan',
