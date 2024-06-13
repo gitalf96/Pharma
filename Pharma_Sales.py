@@ -191,7 +191,7 @@ if selected=="Analysis":
             
             fig = px.histogram(
             df,
-            x='AceticAcidDerivatives',
+            x='ACETICACIDDERIVATIVES',
             title='Frequency Distribution of Acetic Acid Derivatives Sales',
             labels={'AceticAcidDerivatives': 'Acetic Acid Derivatives Sales'},
             nbins=10  # Number of bins
@@ -199,7 +199,7 @@ if selected=="Analysis":
             
             gig=px.histogram(
             df,
-            x='SalicylicAcidDerivatives',
+            x='SALICYLICACIDDERIVATIVES',
             title='Frequency Distribution of Salicylic Acid Derivatives',
             labels={'SalicylicAcidDerivatives': 'Salicylic Acid Derivatives'},
             nbins=10  # Number of bins
@@ -215,7 +215,7 @@ if selected=="Analysis":
             
             cg=px.histogram(
             df,
-            x='PyrazolonesAndAnilides',
+            x='PYRAZOLONESANDANILIDES',
             title='Frequency Distribution of Pyrazolones And Anilides Sales',
             labels={'PyrazolonesAndAnilides': 'Pyrazolones And Anilides Sales'},
             nbins=10  # Number of bins
@@ -223,7 +223,7 @@ if selected=="Analysis":
             
             dg=px.histogram(
             df,
-            x='AnxiolyticDrugs',
+            x='ANXIOLYTICDRUGS',
             title='Frequency Distribution of Anxiolytic Drugs Sales',
             labels={'AnxiolyticDrugs': 'Anxiolytic Drugs Sales'},
             nbins=10  # Number of bins
@@ -231,7 +231,7 @@ if selected=="Analysis":
             
             eg=px.histogram(
             df,
-            x='HypnoticsSndSedativesDrugs',
+            x='HYPNOTICSSNDSEDATIVESDRUGS',
             title='Frequency Distribution of Hypnotics and Sedatives Drugs Sales',
             labels={'HypnoticsSndSedativesDrugs': 'Hypnotics and Sedatives Drugs Sales'},
             nbins=10  # Number of bins
@@ -239,7 +239,7 @@ if selected=="Analysis":
             
             hg=px.histogram(
             df,
-            x='ObstructiveAirwayDrugs',
+            x='OBSTRUCTIVEAIRWAYDRUGS',
             title='Frequency Distribution of Obstructive Airway Drugs Sales',
             labels={'ObstructiveAirwayDrugs': 'Obstructive Airway Drugs Sales'},
             nbins=10  # Number of bins
@@ -247,7 +247,7 @@ if selected=="Analysis":
             
             ig=px.histogram(
             df,
-            x='Antihistamines',
+            x='ANTIHISTAMINES',
             title='Frequency Distribution of Antihistamines Sales',
             labels={'Antihistamines': 'Antihistamines'},
             nbins=10  # Number of bins
@@ -257,34 +257,34 @@ if selected=="Analysis":
 
             histo=st.radio(
                 "Choose drug",
-                ["AceticAcidDerivatives","SalicylicAcidDerivatives","PropionicAcidDerivatives",
-                 "PyrazolonesAndAnilides","AnxiolyticDrugs","HypnoticsSndSedativesDrugs", 
-                 "ObstructiveAirwayDrugs","Antihistamines"],
+                ['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES', 'SALICYLICACIDDERIVATIVES',
+                'PYRAZOLONESANDANILIDES', 'ANXIOLYTICDRUGS', 'HYPNOTICSSNDSEDATIVESDRUGS',
+                'OBSTRUCTIVEAIRWAYDRUGS', 'ANTIHISTAMINES'],
                 horizontal=st.session_state.horizontal,
             )
 
-            if histo=="AceticAcidDerivatives":
+            if histo=="ACETICACIDDERIVATIVES":
                 st.plotly_chart(fig)
 
-            elif histo=="SalicylicAcidDerivatives":
+            elif histo=="SALICYLICACIDDERIVATIVES":
                 st.plotly_chart(gig)
 
-            elif histo=="PropionicAcidDerivatives":
+            elif histo=="PROPIONICACIDDERIVATIVES":
                 st.plotly_chart(ag)
 
-            elif histo=="PyrazolonesAndAnilides":
+            elif histo=="PYRAZOLONESANDANILIDES":
                 st.plotly_chart(cg)
 
-            elif histo=="AnxiolyticDrugs":
+            elif histo=="ANXIOLYTICDRUGS":
                 st.plotly_chart(dg)
 
-            elif histo=="HypnoticsSndSedativesDrugs":
+            elif histo=="HYPNOTICSSNDSEDATIVESDRUGS":
                 st.plotly_chart(eg)
 
-            elif histo=="ObstructiveAirwayDrugs":
+            elif histo=="OBSTRUCTIVEAIRWAYDRUGS":
                 st.plotly_chart(hg)
 
-            elif histo=="Antihistamines":
+            elif histo=="ANTIHISTAMINES":
                 st.plotly_chart(ig)
 
 
