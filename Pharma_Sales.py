@@ -35,7 +35,7 @@ page_element="""
 <style>
     div[data-testid="stSidebar"]{
     # div[class="st-emotion-cache-u5opgr eczjsme11"]{
-    background-image: url("https://cdn.wallpapersafari.com/88/75/cLUQqJ.jpg"); 
+    background-image: url("https://c1.wallpaperflare.com/preview/839/207/808/pill-tablet-pharmacy-medicine.jpg"); 
     color: white
     }
     </style>
