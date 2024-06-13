@@ -121,12 +121,12 @@ if selected=="Analysis":
         with d1:
              
             summry="""
-            Pharma sales analysis involves examining data related to the sales of pharmaceutical products. This analysis is crucial for pharmaceutical companies to understand market trends, evaluate the performance of their products, and make informed business decisions. Here's a brief overview of pharma sales analysis and its advantages:
+            **Pharma sales analysis involves examining data related to the sales of pharmaceutical products. This analysis is crucial for pharmaceutical companies to understand market trends, evaluate the performance of their products, and make informed business decisions. Here's a brief overview of pharma sales analysis and its advantages:
             1. :red[Identifying Market Trends:] Analysis helps in understanding market trends, such as which drugs are in high demand, seasonal variations in sales, and emerging market preferences.
             2. :red[Optimizing Inventory:] By analyzing sales data, companies can optimize their inventory management by stocking the right amount of each drug, reducing stockouts, and minimizing excess inventory.
             3. :red[Sales Forecasting:] Analysis allows for accurate sales forecasting, helping companies plan production, marketing campaigns, and budget allocation effectively.
             4. :red[Performance Evaluation:] Sales analysis provides insights into the performance of sales teams, territories, and individual products, facilitating performance evaluation and improvement strategies.
-            5. :red[Decision Making:] Data-driven insights from sales analysis support informed decision-making across various aspects of the business, leading to improved overall performance and profitability.
+            5. :red[Decision Making:] Data-driven insights from sales analysis support informed decision-making across various aspects of the business, leading to improved overall performance and profitability.**
             
             """
             def stream_data():
