@@ -145,10 +145,10 @@ if selected=="Analysis":
 
                 selected_drugs = st.multiselect(
                 'Select drug categories to plot',
-                options=['AceticAcidDerivatives', 'PropionicAcidDerivatives', 'SalicylicAcidDerivatives',
-                        'PyrazolonesAndAnilides', 'AnxiolyticDrugs', 'HypnoticsSndSedativesDrugs',
-                        'ObstructiveAirwayDrugs', 'Antihistamines'],
-                default=['AceticAcidDerivatives', 'PropionicAcidDerivatives']
+                options=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES', 'SALICYLICACIDDERIVATIVES',
+                'PYRAZOLONESANDANILIDES', 'ANXIOLYTICDRUGS', 'HYPNOTICSSNDSEDATIVESDRUGS',
+                'OBSTRUCTIVEAIRWAYDRUGS', 'ANTIHISTAMINES'],
+                default=['ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES']
                 )
 
                 # Plotting
