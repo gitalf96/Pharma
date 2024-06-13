@@ -167,9 +167,9 @@ if selected=="Analysis":
         with d3:
              
             drug_categories = [
-                'AceticAcidDerivatives', 'PropionicAcidDerivatives', 'SalicylicAcidDerivatives',
-                'PyrazolonesAndAnilides', 'AnxiolyticDrugs', 'HypnoticsSndSedativesDrugs',
-                'ObstructiveAirwayDrugs', 'Antihistamines'
+                'ACETICACIDDERIVATIVES', 'PROPIONICACIDDERIVATIVES', 'SALICYLICACIDDERIVATIVES',
+                'PYRAZOLONESANDANILIDES', 'ANXIOLYTICDRUGS', 'HYPNOTICSSNDSEDATIVESDRUGS',
+                'OBSTRUCTIVEAIRWAYDRUGS', 'ANTIHISTAMINES'
                 ]
              
             total_sales = df[drug_categories].sum()
