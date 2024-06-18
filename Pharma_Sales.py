@@ -198,7 +198,7 @@ if selected=="Analysis":
             labels={'ACETICACIDDERIVATIVES': 'Acetic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
-            fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 0)')
 
             Sali_df=df[df['SALICYLICACIDDERIVATIVES'] !=0]
             gig=px.histogram(
