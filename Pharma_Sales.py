@@ -196,7 +196,8 @@ if selected=="Analysis":
             x='ACETICACIDDERIVATIVES',
             title='Frequency Distribution of Acetic Acid Derivatives Sales',
             labels={'ACETICACIDDERIVATIVES': 'Acetic Acid Derivatives Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
@@ -206,7 +207,8 @@ if selected=="Analysis":
             x='SALICYLICACIDDERIVATIVES',
             title='Frequency Distribution of Salicylic Acid Derivatives',
             labels={'SALICYLICACIDDERIVATIVES': 'Salicylic Acid Derivatives'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             gig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
@@ -216,7 +218,8 @@ if selected=="Analysis":
             x='PROPIONICACIDDERIVATIVES',
             title='Frequency Distribution of Propionic Acid Derivatives Sales',
             labels={'PROPIONICACIDDERIVATIVES': 'Propionic Acid Derivatives Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             ag.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
           
@@ -226,7 +229,8 @@ if selected=="Analysis":
             x='PYRAZOLONESANDANILIDES',
             title='Frequency Distribution of Pyrazolones And Anilides Sales',
             labels={'PYRAZOLONESANDANILIDES': 'Pyrazolones And Anilides Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             cg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
@@ -236,7 +240,8 @@ if selected=="Analysis":
             x='ANXIOLYTICDRUGS',
             title='Frequency Distribution of Anxiolytic Drugs Sales',
             labels={'ANXIOLYTICDRUGS': 'Anxiolytic Drugs Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             dg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
           
@@ -246,7 +251,8 @@ if selected=="Analysis":
             x='HYPNOTICSSNDSEDATIVESDRUGS',
             title='Frequency Distribution of Hypnotics and Sedatives Drugs Sales',
             labels={'HYPNOTICSSNDSEDATIVESDRUGS': 'Hypnotics and Sedatives Drugs Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             eg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
           
@@ -256,7 +262,8 @@ if selected=="Analysis":
             x='OBSTRUCTIVEAIRWAYDRUGS',
             title='Frequency Distribution of Obstructive Airway Drugs Sales',
             labels={'ObstructiveAirwayDrugs': 'Obstructive Airway Drugs Sales'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             hg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
@@ -266,7 +273,8 @@ if selected=="Analysis":
             x='ANTIHISTAMINES',
             title='Frequency Distribution of Antihistamines Sales',
             labels={'ANTIHISTAMINES': 'Antihistamines'},
-            nbins=10  # Number of bins
+            nbins=10,  # Number of bins
+            color_discrete_sequence=['#32CD32']
              )
             ig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
             
