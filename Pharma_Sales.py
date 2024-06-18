@@ -95,6 +95,7 @@ df = pd.read_sql(query, conn)
 conn.close()
 
 df['TIME']=pd.to_datetime(df['TIME'])
+df['NEWDATE'] = df['TIME'].dt.date
 df.info()
 
 with st.sidebar:
@@ -137,17 +138,17 @@ if selected=="Analysis":
 
         with d2:
 
-                r1,r2,r4=st.columns([15,15,42.5])
+                r1,r4=st.columns([20,42.5])
 
                 with r1:
 
                     year_filter = st.selectbox("Select Year", pd.unique(df['YEAR']))
                     df = df[df['YEAR'] == year_filter]
                     
-                with r2:
+                # with r2:
                     
-                    month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
-                    df = df[df['MONTH'] == month_filter]
+                #     month_filter = st.selectbox("Select Month", pd.unique(df['MONTH']))
+                #     df = df[df['MONTH'] == month_filter]
                                         
                     
                 with r4:
@@ -163,7 +164,7 @@ if selected=="Analysis":
                 if selected_drugs:
                     plt.figure(figsize=(14, 7))
                     for drug in selected_drugs:
-                        plt.plot(df['DATE'], df[drug], label=drug)
+                        plt.plot(df['NEWDATE'], df[drug], label=drug)
                     plt.xlabel('Year')
                     plt.ylabel('Sales')
                     plt.title('Time Series of Pharma Sales')
@@ -188,70 +189,86 @@ if selected=="Analysis":
 
 
         with d4:
-            
+
+            Acetid_df = df[df['ACETICACIDDERIVATIVES'] != 0]
             fig = px.histogram(
-            df,
+            Acetid_df,
             x='ACETICACIDDERIVATIVES',
             title='Frequency Distribution of Acetic Acid Derivatives Sales',
             labels={'ACETICACIDDERIVATIVES': 'Acetic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
-            
+            fig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+
+            Sali_df=df[df['SALICYLICACIDDERIVATIVES'] !=0]
             gig=px.histogram(
-            df,
+            Sali_df,
             x='SALICYLICACIDDERIVATIVES',
             title='Frequency Distribution of Salicylic Acid Derivatives',
             labels={'SALICYLICACIDDERIVATIVES': 'Salicylic Acid Derivatives'},
             nbins=10  # Number of bins
              )
-            
+            gig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+
+            Prop_df=df[df['PROPIONICACIDDERIVATIVES']!=0]
             ag=px.histogram(
-            df,
+            Prop_df,
             x='PROPIONICACIDDERIVATIVES',
             title='Frequency Distribution of Propionic Acid Derivatives Sales',
             labels={'PROPIONICACIDDERIVATIVES': 'Propionic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
-            
+            ag.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+          
+            Pyra_df=df[df['PYRAZOLONESANDANILIDES']!=0]
             cg=px.histogram(
-            df,
+            Pyra_df,
             x='PYRAZOLONESANDANILIDES',
             title='Frequency Distribution of Pyrazolones And Anilides Sales',
             labels={'PYRAZOLONESANDANILIDES': 'Pyrazolones And Anilides Sales'},
             nbins=10  # Number of bins
              )
-            
+            cg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+
+            Anx_df=df[df['ANXIOLYTICDRUGS']!=0]
             dg=px.histogram(
-            df,
+            Anx_df,
             x='ANXIOLYTICDRUGS',
             title='Frequency Distribution of Anxiolytic Drugs Sales',
             labels={'ANXIOLYTICDRUGS': 'Anxiolytic Drugs Sales'},
             nbins=10  # Number of bins
              )
-            
+            dg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+          
+            hyp_df=df[df['HYPNOTICSSNDSEDATIVESDRUGS']!=0]  
             eg=px.histogram(
-            df,
+            hyp_df,
             x='HYPNOTICSSNDSEDATIVESDRUGS',
             title='Frequency Distribution of Hypnotics and Sedatives Drugs Sales',
             labels={'HYPNOTICSSNDSEDATIVESDRUGS': 'Hypnotics and Sedatives Drugs Sales'},
             nbins=10  # Number of bins
              )
-            
+            eg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+
+            Obs_df=df[df['OBSTRUCTIVEAIRWAYDRUGS']!=0]
             hg=px.histogram(
-            df,
+            Obs_df,
             x='OBSTRUCTIVEAIRWAYDRUGS',
             title='Frequency Distribution of Obstructive Airway Drugs Sales',
             labels={'ObstructiveAirwayDrugs': 'Obstructive Airway Drugs Sales'},
             nbins=10  # Number of bins
              )
-            
+            hg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+
+            Anti_df=df[df['ANTIHISTAMINES']!=0]
             ig=px.histogram(
-            df,
+            Anti_df,
             x='ANTIHISTAMINES',
             title='Frequency Distribution of Antihistamines Sales',
             labels={'ANTIHISTAMINES': 'Antihistamines'},
             nbins=10  # Number of bins
              )
+            ig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
             
             st.session_state.horizontal = True
 
