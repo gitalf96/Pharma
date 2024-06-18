@@ -208,7 +208,7 @@ if selected=="Analysis":
             labels={'SALICYLICACIDDERIVATIVES': 'Salicylic Acid Derivatives'},
             nbins=10  # Number of bins
              )
-            gig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            gig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
             Prop_df=df[df['PROPIONICACIDDERIVATIVES']!=0]
             ag=px.histogram(
@@ -218,7 +218,7 @@ if selected=="Analysis":
             labels={'PROPIONICACIDDERIVATIVES': 'Propionic Acid Derivatives Sales'},
             nbins=10  # Number of bins
              )
-            ag.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            ag.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
           
             Pyra_df=df[df['PYRAZOLONESANDANILIDES']!=0]
             cg=px.histogram(
@@ -228,7 +228,7 @@ if selected=="Analysis":
             labels={'PYRAZOLONESANDANILIDES': 'Pyrazolones And Anilides Sales'},
             nbins=10  # Number of bins
              )
-            cg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            cg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
             Anx_df=df[df['ANXIOLYTICDRUGS']!=0]
             dg=px.histogram(
@@ -238,7 +238,7 @@ if selected=="Analysis":
             labels={'ANXIOLYTICDRUGS': 'Anxiolytic Drugs Sales'},
             nbins=10  # Number of bins
              )
-            dg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            dg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
           
             hyp_df=df[df['HYPNOTICSSNDSEDATIVESDRUGS']!=0]  
             eg=px.histogram(
@@ -248,8 +248,8 @@ if selected=="Analysis":
             labels={'HYPNOTICSSNDSEDATIVESDRUGS': 'Hypnotics and Sedatives Drugs Sales'},
             nbins=10  # Number of bins
              )
-            eg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
-
+            eg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
+          
             Obs_df=df[df['OBSTRUCTIVEAIRWAYDRUGS']!=0]
             hg=px.histogram(
             Obs_df,
@@ -258,7 +258,7 @@ if selected=="Analysis":
             labels={'ObstructiveAirwayDrugs': 'Obstructive Airway Drugs Sales'},
             nbins=10  # Number of bins
              )
-            hg.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            hg.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
 
             Anti_df=df[df['ANTIHISTAMINES']!=0]
             ig=px.histogram(
@@ -268,7 +268,7 @@ if selected=="Analysis":
             labels={'ANTIHISTAMINES': 'Antihistamines'},
             nbins=10  # Number of bins
              )
-            ig.update_layout(plot_bgcolor='rgba(0, 0, 0, 0)',paper_bgcolor='rgba(0, 0, 0, 0)')
+            ig.update_layout(plot_bgcolor='rgba(0, 0, 0, 9)',paper_bgcolor='rgba(0, 0, 0, 9)')
             
             st.session_state.horizontal = True
 
